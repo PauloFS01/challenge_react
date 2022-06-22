@@ -1,0 +1,39 @@
+type Query {
+  posts: [Posts!]!
+  post(id: Float!): Posts
+}
+
+type Posts {
+  id: Int!
+  quote: String!
+}
+
+type Mutation {
+  createPost(quote: String!): Posts
+  updatePost(quote: String, id: Float!): Posts
+  deletePost(id: Float!): Boolean!
+  register(options: UsernamePasswordInut!): UserResponse!
+  login(options: UsernamePasswordInut!): UserResponse!
+}
+
+type UserResponse {
+  errors: [FieldError!]
+  userId: Users
+  token: String
+}
+
+type FieldError {
+  field: String!
+  message: String!
+}
+
+type Users {
+  id: Int!
+  username: String!
+  password: String!
+}
+
+input UsernamePasswordInut {
+  username: String!
+  password: String!
+}
