@@ -5,10 +5,19 @@ import CreateQuote from "./pages/createQuote";
 import Login from "./pages/login";
 import SingIn from "./pages/singIn";
 
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+/>;
+
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+/>;
+
 function App() {
   return (
     <div className="App">
-      <h1>Welcome to React Router!</h1>
       <Routes>
         <Route path="/" element={<Feed />} />
         <Route path="about" element={<About />} />

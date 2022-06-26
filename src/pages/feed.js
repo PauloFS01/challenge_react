@@ -1,18 +1,40 @@
-import { useNavigate } from "react-router-dom";
+import { Box, Container } from "@mui/material";
+
+import NvBar from "../components/NvBar";
+import FeedCard from "../components/FeedCard";
+
+const datas = [
+  {
+    title: "title here!",
+    constent: "Here comes the content",
+    author: "here comes the author",
+    desc: "this is desc",
+  },
+  {
+    title: "title here!",
+    constent: "another content",
+    author: "here comes the author",
+    desc: "this is desc",
+  },
+  {
+    title: "title here!",
+    constent: "One more content",
+    author: "here comes the author",
+    desc: "this is desc",
+  },
+];
 
 export default function Home() {
-  let navigate = useNavigate();
-
-  function goTo() {
-    navigate("about");
-  }
   return (
     <>
-      <main>
-        <h2>Welcome to the homepage!</h2>
-        <button onClick={goTo}>go to about</button>
-        <p>This is feed page.</p>
-      </main>
+      <NvBar title={"Feed"} path={"login"} pathName={"Login"} />
+      <Container fixed>
+        <Box sx={{ padding: 10 }}>
+          {datas.map((data) => (
+            <FeedCard data={data} />
+          ))}
+        </Box>
+      </Container>
     </>
   );
 }
