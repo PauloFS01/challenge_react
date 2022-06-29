@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-import { Box, Container, TextField, Typography } from "@mui/material";
+import { Box, Container, TextField, Typography, Link } from "@mui/material";
 import { LoadingButton } from "@mui/lab";
 
 import SendIcon from "@mui/icons-material/Send";
@@ -81,6 +81,18 @@ export default function Login() {
             Send
           </LoadingButton>
         </Box>
+        <Box sx={boxStyle}>
+          <Typography sx={{ color: "#3498DB" }}>OR</Typography>
+          <Link
+            component="button"
+            variant="h6"
+            onClick={() => {
+              navigate("/singIn", { replace: true });
+            }}
+          >
+            Singup
+          </Link>
+        </Box>
       </Container>
     </>
   );
@@ -94,4 +106,12 @@ const form = {
   alignItems: "center",
   justifyContent: " center",
   border: "1px dashed #3498DB",
+};
+
+const boxStyle = {
+  marginTop: 5,
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  justifyContent: " center",
 };

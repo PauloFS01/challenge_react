@@ -9,7 +9,7 @@ import Button from "@mui/material/Button";
 // import IconButton from "@mui/material/IconButton";
 // import MenuIcon from "@mui/icons-material/Menu";
 
-export default function ButtonAppBar({ title, path, pathName }) {
+export default function ButtonAppBar({ title, path = "/", pathName }) {
   let navigate = useNavigate();
   function goTo() {
     navigate(path);
